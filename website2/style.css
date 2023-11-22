@@ -1,0 +1,99 @@
+
+@font-face {
+    font-family: 'Achron';
+    src: url('Achron.otf');
+}
+/* ... Other @font-face rules ... */
+
+body {
+    background-color: #000;
+    color: #0f0;
+    font-family: 'Achron', 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+header, nav, section, footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    justify-content: space-between;
+}
+
+nav {
+    justify-content: center;
+}
+
+nav a {
+    flex: 1 1 auto;
+    margin: 5px;
+    text-align: center;
+}
+
+.image-container, .lore-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.image-container img, .lore-images img {
+    flex: 1;
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    header, nav, section, footer {
+        flex-direction: column;
+    }
+}
+
+/* Add additional responsive design rules here ... */
+
+/* Existing style_flex.css content */
+
+/* Ensuring maximum width for container */
+body {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Flexbox settings for nav bar images to ensure they scale properly */
+nav a img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive nav bar adjustments */
+@media (max-width: 768px) {
+    nav {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding: 0;
+    }
+    nav a {
+        min-width: 50px; /* Minimum width for touch-friendly links */
+        padding: 10px;
+        flex: 0 0 auto; /* Prevents nav items from growing or shrinking */
+    }
+    nav a img {
+        width: 50px; /* Fixed width for nav images on small screens */
+        height: 50px; /* Fixed height for nav images on small screens */
+    }
+}
+
+/* Hide scrollbar for cleaner look while still being functional */
+nav::-webkit-scrollbar {
+    display: none; /* for Webkit browsers */
+}
+nav {
+    -ms-overflow-style: none; /* for IE and Edge */
+    scrollbar-width: none; /* for Firefox */
+}
